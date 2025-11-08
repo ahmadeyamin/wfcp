@@ -86,9 +86,9 @@ export default function WebflowClipboardEditor() {
 
   const escapeContent = (content: string): string => {
     return content
-      .replace(/\n/g, '\\n')
-      .replace(/\r/g, '\\r')
-      .replace(/\t/g, '\\t');
+      .replace(/\n+/g, '\n')
+      .replace(/\r/g, '\r')
+      .replace(/\t/g, '\t');
   };
 
   const handlePaste = (event: React.ClipboardEvent<HTMLTextAreaElement>): void => {
